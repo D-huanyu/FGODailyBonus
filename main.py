@@ -29,7 +29,8 @@ def main():
         fgourl.ReadConf()
         fgourl.gameData()
         print(f'待签到: {userNums}个')
-               res = ' 【登录信息】\n' + '待签到: {userNums}个'
+        res = ' 【登录信息】\n' 
+        res += f"待签到用户数: {userNums}个\n\n"
         for i in range(userNums):
             try:
                 instance = user(userIds[i], authKeys[i], secretKeys[i])
