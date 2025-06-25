@@ -5,26 +5,26 @@ import mytime
 import fgourl
 from user import user
 
-userIds = os.environ['GAME_USERIDS'].split(',')
-authKeys = os.environ['GAME_AUTHKEYS'].split(',')
-secretKeys = os.environ['GAME_SECRETKEYS'].split(',')
+userIds = os.environ['userIds'].split(',')
+authKeys = os.environ['authKeys'].split(',')
+secretKeys = os.environ['secretKeys'].split(',')
 
 userNums = len(userIds)
 authKeyNums = len(authKeys)
 secretKeyNums = len(secretKeys)
 
-fgourl.ver_code_ = os.environ['GAME_VERCODE']
-fgourl.TelegramBotToken = os.environ['TELEGRAM_BOT_TOKEN']
-fgourl.TelegramAdminId = os.environ['TELEGRAM_ADMIN_ID']
-fgourl.github_token_ = os.environ['VERY_IMPORTANT_TOKEN']
-fgourl.github_name_ = os.environ['VERY_IMPORTANT_NAME']
-UA = os.environ['GAME_USERAGENT']
+fgourl.ver_code_ = os.environ['verCode']
+fgourl.TelegramBotToken = os.environ['TGBotToken']
+fgourl.TelegramAdminId = os.environ['TGAdminId']
+fgourl.github_token_ = os.environ['GithubToken']
+fgourl.github_name_ = os.environ['GithubName']
+UA = os.environ['UserAgent']
 if UA != 'nullvalue':
     fgourl.user_agent_ = UA
 
 
 def main():
-    fgourl.SendMessageToAdmin(f'铛铛铛 *{mytime.GetNowTimeHour()}点* 了')
+    fgourl.SendMessageToAdmin(f'铛铛铛( \`д´) *{mytime.GetNowTimeHour()}点* 了')
     if userNums == authKeyNums and userNums == secretKeyNums:
         fgourl.ReadConf()
         fgourl.gameData()
